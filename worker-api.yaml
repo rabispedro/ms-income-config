@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: worker-api
+
+  profiles:
+    active:
+    - dev
+    - hml
+    - prd
+    default: prd
+
