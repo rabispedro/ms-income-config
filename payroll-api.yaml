@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: payroll-api
+
+  config:
+    name: default
+
+  profiles:
+    active:
+    - default
+    - dev
+    - hml
+    - prd
+    default: prd
+
+server:
+  error:
+    include-stacktrace: never
+    include-message: always
+    whitelabel:
+      enabled: false
+
+---
+
+spring:
+  config:
+    name: dev
+
+  profiles:
+    active: dev
+
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+server:
+  port: ${PORT:0}

@@ -1,4 +1,28 @@
 spring:
+  application:
+    name: worker-api
+
+  config:
+    name: default
+
+  profiles:
+    active:
+    - default
+    - dev
+    - hml
+    - prd
+    default: prd
+
+server:
+  error:
+    include-stacktrace: never
+    include-message: always
+    whitelabel:
+      enabled: false
+
+---
+
+spring:
   config:
     name: dev
 
@@ -15,8 +39,7 @@ spring:
           dialect: org.hibernate.dialect.PosgtreSQLDialect
 
   profiles:
-    active:
-    - dev
+    active: dev
 
 eureka:
   instance:
