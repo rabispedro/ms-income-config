@@ -9,3 +9,9 @@ spring:
     - prd
     default: prd
 
+server:
+  error:
+    include-stacktrace: never
+    include-message: always
+    whitelabel:
+      enabled: false

@@ -17,9 +17,6 @@ spring:
   profiles:
     active:
     - dev
-    - hlm
-    - prd
-    default: dev
 
 eureka:
   instance:
@@ -30,9 +27,4 @@ eureka:
 
 server:
   port: ${PORT:0}
-  error:
-    include-stacktrace: never
-    include-message: always
-    whitelabel:
-      enabled: false
 
